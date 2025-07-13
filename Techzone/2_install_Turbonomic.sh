@@ -513,8 +513,8 @@ echo ${ESC} "${BLUE}=================================${OFF}"
 
 PORT=`echo ${SSH_CONNECTION} | awk '{print $4}'`
 HOST=`echo ${SSH_CONNECTION} | awk '{print $2}'`
-sshpass -p ${BASTION_PASSWD} scp -P ${PORT} /tmp/run_as_itzuser.sh ${HOST}:/tmp 1>/dev/null 2>/dev/null
-sshpass -p ${BASTION_PASSWD} ssh -p ${PORT} ${HOST} "sudo chmod 755 /tmp/run_as_itzuser.sh"
+sshpass -p ${BASTION_PASSWD} scp -o StrictHostKeyChecking=no -P ${PORT} /tmp/run_as_itzuser.sh ${HOST}:/tmp 1>/dev/null 2>/dev/null
+sshpass -p ${BASTION_PASSWD} ssh -o StrictHostKeyChecking=no -p ${PORT} ${HOST} "sudo chmod 755 /tmp/run_as_itzuser.sh"
 
 ############################################################
 
