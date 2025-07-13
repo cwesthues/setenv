@@ -480,7 +480,7 @@ do
    echo "    enabled: false" >> ${CHARTS_CR}
 done
 
-echo ${ESC} "\${BLUE}Create charts_v1alpha1_xl_cr\${OFF}"
+echo \${ESC} "\${BLUE}Create charts_v1alpha1_xl_cr\${OFF}"
 oc apply -f ${CHARTS_CR} -n turbonomic 1>/dev/null 2>/dev/null
 sleep 30
 
