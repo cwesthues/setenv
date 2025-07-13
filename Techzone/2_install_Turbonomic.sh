@@ -1,4 +1,5 @@
-#!/bin/sh
+opying
+
 
 ############################################################
 
@@ -528,12 +529,14 @@ URL=`oc get routes -n turbonomic --no-headers=true | awk '{print $2}'`
 
 ############################################################
 
-echo ${ESC} ""
-echo ${ESC} "${BLUE}Creating desktop icon${OFF}"
-echo ${ESC} "${BLUE}=====================${OFF}"
+if test -d /root/Desktop
+then
+   echo ${ESC} ""
+   echo ${ESC} "${BLUE}Creating desktop icon${OFF}"
+   echo ${ESC} "${BLUE}=====================${OFF}"
 
-DESKTOP_LINK="/root/Desktop/Turbonomic.desktop"
-cat << EOF > ${DESKTOP_LINK}
+   DESKTOP_LINK="/root/Desktop/Turbonomic.desktop"
+   cat << EOF > ${DESKTOP_LINK}
 [Desktop Entry]
 Type=Application
 Terminal=false
@@ -542,10 +545,11 @@ Name=Turbonomic
 Icon=firefox
 EOF
 
-gio set ${DESKTOP_LINK} "metadata::trusted" true
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell  --method 'org.gnome.Shell.Extensions.ReloadExtension' >/dev/null 2>&1
-chmod 755 "${DESKTOP_LINK}"
-echo
+   gio set ${DESKTOP_LINK} "metadata::trusted" true
+   gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell  --method 'org.gnome.Shell.Extensions.ReloadExtension' >/dev/null 2>&1
+   chmod 755 "${DESKTOP_LINK}"
+   echo
+fi
 
 ############################################################
 
