@@ -275,6 +275,18 @@ cat > /tmp/run_as_itzuser.sh <<EOF1
 
 ############################################################
 
+. /etc/os-release
+
+case \${ID_LIKE} in
+*rhel*|*fedora*)
+   ESC="-e"
+;;
+esac
+
+ARCH=\`arch\`
+
+############################################################
+
 RED='\e[1;31m'
 GREEN='\e[1;32m'
 BLUE='\e[1;34m'
@@ -291,9 +303,9 @@ mkdir -p ${TMPDIR}
 
 ############################################################
 
-echo ${ESC} ""
-echo ${ESC} "${BLUE}Create Namespace${OFF}"
-echo ${ESC} "${BLUE}================${OFF}"
+echo \${ESC} ""
+echo \${ESC} "\${BLUE}Create Namespace\${OFF}"
+echo \${ESC} "\${BLUE}================\${OFF}"
 
 cd ${TMPDIR}
 RET=""
@@ -305,9 +317,9 @@ done
 
 ############################################################
 
-echo ${ESC} ""
-echo ${ESC} "\${BLUE}Create OperatorGroup\${OFF}"
-echo ${ESC} "\${BLUE}====================\${OFF}"
+echo \${ESC} ""
+echo \${ESC} "\${BLUE}Create OperatorGroup\${OFF}"
+echo \${ESC} "\${BLUE}====================\${OFF}"
 
 cd ${TMPDIR}
 cat > operatorgroup.yaml << EOF2
@@ -329,9 +341,9 @@ done
 
 ############################################################
 
-echo ${ESC} ""
-echo ${ESC} "\${BLUE}Create Entitlement pull secret\${OFF}"
-echo ${ESC} "\${BLUE}==============================\${OFF}"
+echo \${ESC} ""
+echo \${ESC} "\${BLUE}Create Entitlement pull secret\${OFF}"
+echo \${ESC} "\${BLUE}==============================\${OFF}"
 
 cd ${TMPDIR}
 RET=""
@@ -347,9 +359,9 @@ done
 
 ############################################################
 
-echo ${ESC} ""
-echo ${ESC} "\${BLUE}Create catalog source\${OFF}"
-echo ${ESC} "\${BLUE}=====================\${OFF}"
+echo \${ESC} ""
+echo \${ESC} "\${BLUE}Create catalog source\${OFF}"
+echo \${ESC} "\${BLUE}=====================\${OFF}"
 
 cd ${TMPDIR}
 cat > catalogsource.yaml << EOF2
@@ -376,9 +388,9 @@ done
 
 ############################################################
 
-echo ${ESC} ""
-echo ${ESC} "\${BLUE}Update catalog\${OFF} (~1min.)"
-echo ${ESC} "\${BLUE}==============\${OFF}"
+echo \${ESC} ""
+echo \${ESC} "\${BLUE}Update catalog\${OFF} (~1min.)"
+echo \${ESC} "\${BLUE}==============\${OFF}"
 
 cd ${TMPDIR}
 IMGDIGEST=""
@@ -400,9 +412,9 @@ echo
 
 ############################################################
 
-echo ${ESC} ""
-echo ${ESC} "\${BLUE}Install operator\${OFF}"
-echo ${ESC} "\${BLUE}================\${OFF}"
+echo \${ESC} ""
+echo \${ESC} "\${BLUE}Install operator\${OFF}"
+echo \${ESC} "\${BLUE}================\${OFF}"
 
 cd ${TMPDIR}
 cat > install_operator.yaml << EOF2
@@ -429,9 +441,9 @@ oc adm policy add-scc-to-group anyuid system:serviceaccounts:turbonomic 1>/dev/n
 
 ############################################################
 
-echo ${ESC} ""
-echo ${ESC} "\${BLUE}Install Turbonomic\${OFF} (~8min.)"
-echo ${ESC} "\${BLUE}==================\${OFF}"
+echo \${ESC} ""
+echo \${ESC} "\${BLUE}Install Turbonomic\${OFF} (~8min.)"
+echo \${ESC} "\${BLUE}==================\${OFF}"
 
 cat > ${CHARTS_CR} <<EOF2
 ---
@@ -474,9 +486,9 @@ sleep 30
 
 ############################################################
 
-echo ${ESC} ""
-echo ${ESC} "\${BLUE}Wait for all turbonomic pods are running and ready\${OFF}"
-echo ${ESC} "\${BLUE}==================================================\${OFF}"
+echo \${ESC} ""
+echo \${ESC} "\${BLUE}Wait for all turbonomic pods are running and ready\${OFF}"
+echo \${ESC} "\${BLUE}==================================================\${OFF}"
 
 while true
 do
