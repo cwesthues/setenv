@@ -55,12 +55,17 @@ AGENTKEY="qUMhYJxjSv6uZh2SyqTEnw"
 
 ############################################################
 
+PORT=`echo ${SSH_CONNECTION} | awk '{print $4}'`
+HOST=`echo ${SSH_CONNECTION} | awk '{print $2}'`
+
+############################################################
+
 # Find out latest 5 versions
 echo ${ESC} ""
 echo ${ESC} "${BLUE}Determine Instana version to use${OFF} (~1min.)"
 echo ${ESC} "${BLUE}================================${OFF}"
 
-cat >/etc/yum.repos.d/Instana-Product.repo <<EOF
+cat >/tmp/Instana-Product.repo <<EOF
 [instana-product]
 name=Instana-Product
 baseurl=https://_:${AGENTKEY}@artifact-public.instana.io/artifactory/rel-rpm-public-virtual/
@@ -69,6 +74,19 @@ gpgcheck=0
 gpgkey=https://_:${AGENTKEY}@artifact-public.instana.io/artifactory/api/security/keypair/public/repositories/rel-rpm-public-virtual
 repo_gpgcheck=1
 EOF
+
+sshpass -p "${ITZUSER_PASSWD}" scp -P ${PORT} /tmp/Instana-Product.repo ${HOST}:/tmp 1>/dev/null 2>/dev/null
+sshpass -p "${ITZUSER_PASSWD}" ssh -p ${PORT} ${HOST} sudo cp /tmp/Instana-Product.repo /etc/yum.repos.d/Instana-Product.repo
+
+
+
+
+#cwecwe
+
+exit
+
+
+
 
 INSTANA_VERSION=""
 LATEST_5=`yum -y --showduplicates list instana-console 2>/dev/null | tail -5 | sort -n | awk '{printf("%s ",$2)}'`
@@ -357,8 +375,6 @@ echo ${ESC} ""
 echo ${ESC} "${BLUE}Copying run_as_root.sh${OFF}"
 echo ${ESC} "${BLUE}======================${OFF}"
 
-PORT=`echo ${SSH_CONNECTION} | awk '{print $4}'`
-HOST=`echo ${SSH_CONNECTION} | awk '{print $2}'`
 sshpass -p "${ITZUSER_PASSWD}" scp -P ${PORT} /tmp/run_as_root.sh ${HOST}:/tmp 1>/dev/null 2>/dev/null
 
 ############################################################
