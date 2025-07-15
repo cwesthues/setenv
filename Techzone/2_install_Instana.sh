@@ -78,18 +78,8 @@ EOF
 sshpass -p "${ITZUSER_PASSWD}" scp -P ${PORT} /tmp/Instana-Product.repo ${HOST}:/tmp 1>/dev/null 2>/dev/null
 sshpass -p "${ITZUSER_PASSWD}" ssh -p ${PORT} ${HOST} sudo cp /tmp/Instana-Product.repo /etc/yum.repos.d/Instana-Product.repo
 
-
-
-
-#cwecwe
-
-exit
-
-
-
-
 INSTANA_VERSION=""
-LATEST_5=`yum -y --showduplicates list instana-console 2>/dev/null | tail -5 | sort -n | awk '{printf("%s ",$2)}'`
+LATEST_5=`sshpass -p "${ITZUSER_PASSWD}" ssh -p ${PORT} ${HOST} sudo yum -y --showduplicates list instana-console 2>/dev/null | tail -5 | sort -n | awk '{printf("%s ",$2)}'`
 DEFAULT=`echo ${LATEST_5} | awk '{print $NF}'`
 
 while test "${INSTANA_VERSION}" = ""
