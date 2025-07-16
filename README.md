@@ -14,11 +14,11 @@ Actually, there are 2 sections:
   - **Input variables:** IBMCLOUD_RESOURCE_GROUP   IBMCLOUD_API_KEY
 
 ### Techzone:
-   [1_setup_techzone.sh](Techzone/1_setup_techzone.sh)
+  [1_setup_techzone.sh](Techzone/1_setup_techzone.sh)
 
-  **Purpose:** Pre-script for all TechZone scenarios
+  - **Purpose:** Pre-script for all TechZone scenarios
 
-   [2_install_Concert.sh](Techzone/2_install_Concert.sh)
+  [2_install_Concert.sh](Techzone/2_install_Concert.sh)
    
   - **Purpose:** Setup an (OpenShift based) installation of IBM Concert on TechZone
   - **Input variables:** API_URL BASTION_PASSWD SSH_CONNECTION CLUSTER_ADMIN_PWD TOKEN IBM_ENTITLEMENT_KEY
