@@ -75,11 +75,11 @@ gpgkey=https://_:${AGENTKEY}@artifact-public.instana.io/artifactory/api/security
 repo_gpgcheck=1
 EOF
 
-sshpass -p "${ITZUSER_PASSWD}" scp -P ${PORT} /tmp/Instana-Product.repo ${HOST}:/tmp 1>/dev/null 2>/dev/null
-sshpass -p "${ITZUSER_PASSWD}" ssh -p ${PORT} ${HOST} sudo cp /tmp/Instana-Product.repo /etc/yum.repos.d/Instana-Product.repo
+sshpass -p "${ITZUSER_PASSWD}" scp -o StrictHostKeyChecking=no -P ${PORT} /tmp/Instana-Product.repo ${HOST}:/tmp 1>/dev/null 2>/dev/null
+sshpass -p "${ITZUSER_PASSWD}" ssh -o StrictHostKeyChecking=no -p ${PORT} ${HOST} sudo cp /tmp/Instana-Product.repo /etc/yum.repos.d/Instana-Product.repo
 
 INSTANA_VERSION=""
-LATEST_5=`sshpass -p "${ITZUSER_PASSWD}" ssh -p ${PORT} ${HOST} sudo yum -y --showduplicates list instana-console 2>/dev/null | tail -5 | sort -n | awk '{printf("%s ",$2)}'`
+LATEST_5=`sshpass -p "${ITZUSER_PASSWD}" ssh -o StrictHostKeyChecking=no -p ${PORT} ${HOST} sudo yum -y --showduplicates list instana-console 2>/dev/null | tail -5 | sort -n | awk '{printf("%s ",$2)}'`
 DEFAULT=`echo ${LATEST_5} | awk '{print $NF}'`
 
 while test "${INSTANA_VERSION}" = ""
@@ -365,7 +365,7 @@ echo ${ESC} ""
 echo ${ESC} "${BLUE}Copying run_as_root.sh${OFF}"
 echo ${ESC} "${BLUE}======================${OFF}"
 
-sshpass -p "${ITZUSER_PASSWD}" scp -P ${PORT} /tmp/run_as_root.sh ${HOST}:/tmp 1>/dev/null 2>/dev/null
+sshpass -p "${ITZUSER_PASSWD}" scp -o StrictHostKeyChecking=no -P ${PORT} /tmp/run_as_root.sh ${HOST}:/tmp 1>/dev/null 2>/dev/null
 
 ############################################################
 
@@ -373,7 +373,7 @@ echo ${ESC} ""
 echo ${ESC} "${BLUE}Running run_as_root.sh${OFF}"
 echo ${ESC} "${BLUE}======================${OFF}"
 
-sshpass -p "${ITZUSER_PASSWD}" ssh -p ${PORT} ${HOST} sudo /tmp/run_as_root.sh
+sshpass -p "${ITZUSER_PASSWD}" ssh -o StrictHostKeyChecking=no -p ${PORT} ${HOST} sudo /tmp/run_as_root.sh
 
 
 ############################################################
