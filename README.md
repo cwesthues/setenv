@@ -92,6 +92,10 @@ Sample screenshots:
 
 [On MacOS](images/MacOS.jpg)
 
+[On CodeEngine 1/2](images/CodeEngine1.jpg)
+
+[On CodeEngine 2/2](images/CodeEngine2.jpg)
+
 ___
 
 cwesthues@de.ibm.com 2025/7/16
