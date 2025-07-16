@@ -41,7 +41,7 @@ This could be any bare metal or VM node.
 
 In addition, there is a docker/podman container [setenv](https://hub.docker.com/u/cwesthues) that automatically git-clones this repo at startup.
 
-It can be used on a pure cmdline way, as well as serve noVNC/xfce4 on the local host.
+It can be used on a pure **cmdline** way, as well as **serve noVNC/xfce4** on the local host.
 ___
 
 **Graphical access:**
