@@ -10,8 +10,9 @@ Actually, there are 2 sections:
 
   weihenstephan.sh
   
-  -Purpose: Setup all components for the PoC for Weihenstephan
-  -Input variables: IBMCLOUD_RESOURCE_GROUP   IBMCLOUD_API_KEY
+  - Purpose: Setup all components for the PoC for Weihenstephan
+  
+  - Input variables: IBMCLOUD_RESOURCE_GROUP   IBMCLOUD_API_KEY
 
 + TechZone:
    
