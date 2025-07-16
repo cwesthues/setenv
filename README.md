@@ -90,7 +90,7 @@ Sample screenshots:
 
 [On Windows](images/windows.jpg)
 
-[On LInux](https://hub.docker.com/uhues)
+[On MacOS](images/MacOS.jpg)
 
 ___
 
