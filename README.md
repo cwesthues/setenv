@@ -42,7 +42,11 @@ Actually, there are 2 sections:
 
 ### How and where to execute all that
 
-Bla
+All the scripts can be executed on a Linux based node, both x86_64 and aarch64, both RHEL and Ubuntu should work.
+This could be any bare metal or VM node.
+In addition, there is a docker/podman container SETENV that automatically git-clones this repo at startup.
+It can be used on a pure cmdline way, as well as serve noVNC/xfce4 on the local host.
+
 
 
 
@@ -138,4 +142,4 @@ You can put all these envvar settings into <cwd>/.ce-gateway.conf
   
 A short PDF with screenshots can be found [here](https://github.ibm.com/cwesthues/cemaster/blob/main/LSF-CodeEngine-Gateway.pdf).
 
-cwesthues@de.ibm.com 2024/10/23
+cwesthues@de.ibm.com 2025/7/16
