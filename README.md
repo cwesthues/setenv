@@ -36,6 +36,12 @@ Actually, there are 2 sections:
 
 
 
+### How and where to execute all that
+
+Bla
+
+
+
         G R A P H I C A L    A C C E S S
    MacOS (ARM):
       podman run --name setenv -d -p 8080:8080 --replace docker.io/cwesthues/setenv
