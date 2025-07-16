@@ -43,6 +43,7 @@ In addition, there is a docker/podman container [setenv](https://hub.docker.com/
 
 It can be used on a pure cmdline way, as well as serve noVNC/xfce4 on the local host.
 
+---
 **Graphical access:**
 
 MacOS (ARM) 
@@ -56,6 +57,7 @@ podman run --name setenv -d -p 8080:8080 --replace docker.io/cwesthues/setenv|
 ```
 Browse to : http://localhost:8080
 
+---
 
 
 xxxxxxxxxxxxxxxx
