@@ -7,8 +7,7 @@ to quickly and easy deploy/recover.
 Actually, there are 2 sections:
 
 ### Pilots:
-
-  weihenstephan.sh
+  [weihenstephan.sh](sdasdasd)
   
   - **Purpose:** Setup all components for the PoC for Weihenstephan
   
