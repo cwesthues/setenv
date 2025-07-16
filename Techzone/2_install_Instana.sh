@@ -131,9 +131,9 @@ EOF2
 
 if test ! -d /instana_docker
 then
-   echo ${ESC} ""
-   echo ${ESC} "\${BLUE}Adding 2nd disk for docker\${OFF}"
-   echo ${ESC} "\${BLUE}==========================\${OFF}"
+   echo \${ESC} ""
+   echo \${ESC} "\${BLUE}Adding 2nd disk for docker\${OFF}"
+   echo \${ESC} "\${BLUE}==========================\${OFF}"
    vgcreate my_vg /dev/vdc 1>/dev/null 2>/dev/null
    lvcreate -l 100%FREE -n my_lv my_vg 1>/dev/null 2>/dev/null
    mkfs.xfs /dev/my_vg/my_lv 1>/dev/null 2>/dev/null
@@ -145,9 +145,9 @@ fi
 
 if test ! -f /etc/yum.repos.d/docker-ce.repo
 then
-   echo ${ESC} ""
-   echo ${ESC} "\${BLUE}Installing Docker\${OFF}"
-   echo ${ESC} "\${BLUE}=================\${OFF}"
+   echo \${ESC} ""
+   echo \${ESC} "\${BLUE}Installing Docker\${OFF}"
+   echo \${ESC} "\${BLUE}=================\${OFF}"
 
    dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo 1>/dev/null 2>/dev/null
    rpm -e --nodeps podman-docker runc 1>/dev/null 2>/dev/null
@@ -160,9 +160,9 @@ fi
 RET=\`systemctl | egrep docker.service 2>/dev/null\`
 if test "\${RET}" = ""
 then
-   echo ${ESC} ""
-   echo ${ESC} "\${BLUE}Enabling and starting docker service\${OFF}"
-   echo ${ESC} "\${BLUE}====================================\${OFF}"
+   echo \${ESC} ""
+   echo \${ESC} "\${BLUE}Enabling and starting docker service\${OFF}"
+   echo \${ESC} "\${BLUE}====================================\${OFF}"
 
    systemctl enable docker 1>/dev/null 2>/dev/null
    systemctl start docker 1>/dev/null 2>/dev/null
@@ -170,9 +170,9 @@ fi
 
 ############################################################
 
-echo ${ESC} ""
-echo ${ESC} "\${BLUE}Install Instana\${OFF} (~ 20 min.)"
-echo ${ESC} "\${BLUE}===============\${OFF}"
+echo \${ESC} ""
+echo \${ESC} "\${BLUE}Install Instana\${OFF} (~ 20 min.)"
+echo \${ESC} "\${BLUE}===============\${OFF}"
 
 mkdir -p /mnt/data /mnt/traces /mnt/metrics
 openssl req -x509 -newkey rsa:2048 -keyout /tmp/tls.key -out /tmp/tls.crt -days 365 -nodes -subj "/CN=\${HOSTNAME}"
