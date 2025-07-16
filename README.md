@@ -75,15 +75,15 @@ ___
 
 **Codeengine access:**
 
-   Create application:
+Create application:
    
-      Image reference: docker.io/cwesthues/setenv
+  - Image reference: docker.io/cwesthues/setenv
 
-      CPU and memory: 0.5 vCPU / 2 GB   Ephem. storage 1.4
+  - CPU and memory: 0.5 vCPU / 2 GB   Ephem. storage 1.4
 
-      Min. number of instances: 1
+  - Min. number of instances: 1
       
-      Open URL: https://........codeengine.appdomain.cloud/
+  - Open URL: https://........codeengine.appdomain.cloud
 ___
 
 
