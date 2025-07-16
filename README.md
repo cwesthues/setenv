@@ -85,10 +85,12 @@ Create application:
       
   - Open URL: https://........codeengine.appdomain.cloud
 ___
-Sample screenshots:
-[On windows(https://hub.docker.com/uhues)
-[On LInux(https://hub.docker.com/uhues)
 
+Sample screenshots:
+
+[On windows](https://hub.docker.com/uhues)
+
+[On LInux](https://hub.docker.com/uhues)
 
 ___
 
