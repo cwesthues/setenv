@@ -52,10 +52,37 @@ podman run --name setenv -d -p 8080:8080 --replace docker.io/cwesthues/setenv
 ```
 Linux
 ```
-podman run --name setenv -d -p 8080:8080 --replace docker.io/cwesthues/setenv|
+podman run --name setenv -d -p 8080:8080 --replace docker.io/cwesthues/setenv
 ```
 Browse to : http://localhost:8080
 ___
+
+**Cmdline access:**
+
+Windows: 
+```
+docker run -ti docker.io/cwesthues/setenv /bin/bash
+```
+MacOS (ARM):
+```
+podman run -ti docker.io/cwesthues/setenv /bin/bash
+```
+Linux
+```
+podman run -ti docker.io/cwesthues/setenv /bin/bash
+```
+___
+
+**Codeengine access:**
+
+   Create application:
+      Image reference: docker.io/cwesthues/setenv
+      CPU and memory: 0.5 vCPU / 2 GB   Ephem. storage 1.4
+      Min. number of instances: 1
+   Open URL: https://........codeengine.appdomain.cloud/
+___
+
+
 
 
 xxxxxxxxxxxxxxxx
@@ -64,23 +91,6 @@ xxxxxxxxxxxxxxx
 
 
 
-
-
-
-        G R A P H I C A L    A C C E S S
-   MacOS (ARM):
-      podman run --name setenv -d -p 8080:8080 --replace docker.io/cwesthues/setenv
-   Linux:
-      podman run --name setenv -d -p 8080:8080 --replace docker.io/cwesthues/setenv
-   Browse to : http://localhost:8080
-
-   C M D L I N E    A C C E S S
-   Windows:
-      docker run -ti docker.io/cwesthues/setenv /bin/bash
-   MacOS (ARM):
-      podman run -ti docker.io/cwesthues/setenv /bin/bash
-   Linux:
-      podman run -ti docker.io/cwesthues/setenv /bin/bash
 
    C O D E E N G I N E    A C C E S S
    Create application:
