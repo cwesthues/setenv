@@ -1,3 +1,5 @@
+#setenv
+
 A collection of Client Engineering install/setup scripts
 to quickly and easy deploy/recover.
 Actually, there are 2 sections:
