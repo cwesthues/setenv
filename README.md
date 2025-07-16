@@ -39,7 +39,7 @@ All the scripts can be executed on a Linux based node, both x86_64 and aarch64, 
 
 This could be any bare metal or VM node.
 
-In addition, there is a docker/podman container SETENV that automatically git-clones this repo at startup.
+In addition, there is a docker/podman container [setenv](docker.io/cwesthues/setenv) that automatically git-clones this repo at startup.
 
 It can be used on a pure cmdline way, as well as serve noVNC/xfce4 on the local host.
 
