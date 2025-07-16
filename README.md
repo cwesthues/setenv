@@ -11,7 +11,7 @@ Actually, there are 2 sections:
   
   - **Purpose:** Setup all components for the PoC for Weihenstephan
   
-  - **Input variables:** IBMCLOUD_RESOURCE_GROUP   IBMCLOUD_API_KEY
+  - **Input variables:** _IBMCLOUD_RESOURCE_GROUP IBMCLOUD_API_KEY_
 
 ### Techzone:
   [1_setup_techzone.sh](Techzone/1_setup_techzone.sh)
