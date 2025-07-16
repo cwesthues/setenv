@@ -33,18 +33,14 @@ Actually, there are 2 sections:
   - **Purpose:** Setup an (OpenShift based) installation of IBM Turbonomic on TechZone
   - **Input variables:** API_URL BASTION_PASSWD SSH_CONNECTION CLUSTER_ADMIN_PWD TOKEN IBM_ENTITLEMENT_KEY
 
-
-
-
-
-
-
-
 ### How and where to execute all that
 
 All the scripts can be executed on a Linux based node, both x86_64 and aarch64, both RHEL and Ubuntu should work.
+
 This could be any bare metal or VM node.
+
 In addition, there is a docker/podman container SETENV that automatically git-clones this repo at startup.
+
 It can be used on a pure cmdline way, as well as serve noVNC/xfce4 on the local host.
 
 
