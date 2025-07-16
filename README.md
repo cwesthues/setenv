@@ -6,13 +6,12 @@ A collection of Client Engineering install/setup scripts
 to quickly and easy deploy/recover.
 Actually, there are 2 sections:
 
-Pilots:
++ Pilots:
   weihenstephan.sh
-   Purpose: Setup all components for the PoC for Weihenstephan
-   Input variables:
-      IBMCLOUD_RESOURCE_GROUP   IBMCLOUD_API_KEY
+   -Purpose: Setup all components for the PoC for Weihenstephan
+  -Input variables: IBMCLOUD_RESOURCE_GROUP   IBMCLOUD_API_KEY
 
-TechZone:
++ TechZone:
    
    1_setup_techzone.sh
      Purpose: Pre-script for all TechZone scenarios
