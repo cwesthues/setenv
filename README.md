@@ -22,17 +22,16 @@ Actually, there are 2 sections:
    
   - **Purpose:** Setup an (OpenShift based) installation of IBM Concert on TechZone
   - **Input variables:** API_URL BASTION_PASSWD SSH_CONNECTION CLUSTER_ADMIN_PWD TOKEN IBM_ENTITLEMENT_KEY
+   
+  [2_install_Instana.sh](Techzone/2_install:Instana.sh)
+  
+  - **Purpose:** Setup a (single VM) installation of IBM Concert on TechZone
+  - **Input variables:** VNC_URL SSH_CONNECTION ITZUSER_PASSWD
 
-   2_install_Instana.sh
-     Purpose: Setup a (single VM) installation of IBM Concert on TechZone
-   Input variables:
-     VNC_URL SSH_CONNECTION ITZUSER_PASSWD
-
-
-   2_install_Turbonomic.sh
-     Purpose: Setup an (OpenShift based) installation of IBM Turbonomic on TechZone
-   Input variables:
-     API_URL BASTION_PASSWD SSH_CONNECTION CLUSTER_ADMIN_PWD TOKEN IBM_ENTITLEMENT_KEY
+  [2_install_Turbonomic.sh](Techzone/2_install_Turbonomic.sh)
+  
+  - **Purpose:** Setup an (OpenShift based) installation of IBM Turbonomic on TechZone
+  - **Input variables:** API_URL BASTION_PASSWD SSH_CONNECTION CLUSTER_ADMIN_PWD TOKEN IBM_ENTITLEMENT_KEY
 
 
 
