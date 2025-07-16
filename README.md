@@ -88,7 +88,7 @@ ___
 
 Sample screenshots:
 
-[On windows]images/windows.jpg)
+[On windows](images/windows.jpg)
 
 [On LInux](https://hub.docker.com/uhues)
 
