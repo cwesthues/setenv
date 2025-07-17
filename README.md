@@ -98,6 +98,8 @@ Sample screenshots:
 
 [On CodeEngine 2/2](images/CodeEngine2.jpg)
 
+[Turbonomic with watchdog running](images/Turbonomic.jpg)
+
 ___
 
 cwesthues@de.ibm.com 2025/7/16
